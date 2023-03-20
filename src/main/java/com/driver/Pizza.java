@@ -21,12 +21,9 @@ public class Pizza {
         }
     }
 
-    public int getPrice(){
-        return this.price;
-    }
 
     public void addExtraCheese(){
-        if(cheese==false){
+        if(!cheese){
             price+=80;
             bill+="Extra Cheese Added: 80\n";
             cheese=true;
@@ -34,22 +31,21 @@ public class Pizza {
     }
 
     public void addExtraToppings(){
-        if(toppings==false){
+        if(!toppings){
             if(isVeg){
                 price+=70;
                 bill+="Extra Toppings Added: 70\n";
-                toppings=true;
             }
             else{
                 price+=120;
                 bill+="Extra Toppings Added: 120\n";
-                toppings=true;
             }
+            toppings=true;
         }
     }
 
     public void addTakeaway(){
-        if(bag==false){
+        if(!bag){
             price+=20;
             bill+="Paperbag Added: 20\n";
             bag=true;
