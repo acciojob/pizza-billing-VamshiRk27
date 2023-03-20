@@ -20,6 +20,9 @@ public class Pizza {
             bill+="Base Price Of The Pizza: 400\n";
         }
     }
+    public int getPrice() {
+        return this.price;
+    }
 
 
     public void addExtraCheese(){
@@ -53,7 +56,7 @@ public class Pizza {
     }
 
     public String getBill(){
-        bill+="Total Price: "+this.price+"\n";
+        bill+="Total Price: "+getPrice()+"\n";
         return this.bill;
     }
 }
