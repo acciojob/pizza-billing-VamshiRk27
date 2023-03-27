@@ -52,7 +52,51 @@ public class Pizza {
     }
 
     public String getBill(){
-        bill+="Total Price: "+this.price+"\n";
+        bill+="Total Price: "+getPrice()+"\n";
         return this.bill;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public Boolean getVeg() {
+        return isVeg;
+    }
+
+    public void setVeg(Boolean veg) {
+        isVeg = veg;
+    }
+
+    public void setBill(String bill) {
+        this.bill = bill;
+    }
+
+    public boolean isBag() {
+        return bag;
+    }
+
+    public void setBag(boolean bag) {
+        this.bag = bag;
+    }
+
+    public boolean isCheese() {
+        return cheese;
+    }
+
+    public void setCheese(boolean cheese) {
+        this.cheese = cheese;
+    }
+
+    public boolean isToppings() {
+        return toppings;
+    }
+
+    public void setToppings(boolean toppings) {
+        this.toppings = toppings;
     }
 }
