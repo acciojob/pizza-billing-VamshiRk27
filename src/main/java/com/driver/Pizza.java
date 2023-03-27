@@ -2,7 +2,7 @@ package com.driver;
 
 public class Pizza {
 
-    private int price;
+    private int price=0;
     private Boolean isVeg;
     private String bill="";
     private boolean bag=false;
@@ -20,10 +20,6 @@ public class Pizza {
             bill+="Base Price Of The Pizza: 400\n";
         }
     }
-    public int getPrice() {
-        return this.price;
-    }
-
 
     public void addExtraCheese(){
         if(!cheese){
@@ -56,7 +52,7 @@ public class Pizza {
     }
 
     public String getBill(){
-        bill+="Total Price: "+getPrice()+"\n";
+        bill+="Total Price: "+this.price+"\n";
         return this.bill;
     }
 }
