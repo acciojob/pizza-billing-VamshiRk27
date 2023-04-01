@@ -2,101 +2,111 @@ package com.driver;
 
 public class Pizza {
 
-    private int price=0;
-    private Boolean isVeg;
+    private int totalPrice=0;
+    private int basePrice;
+    private int toppingsPrice;
+    private int paperBagPrice;
     private String bill="";
-    private boolean bag=false;
-    private boolean cheese=false;
-    private boolean toppings=false;
+    private boolean bagAdded=false;
+    private boolean cheeseAdded=false;
+    private boolean toppingsAdded=false;
 
     public Pizza(Boolean isVeg){
-        this.isVeg = isVeg;
         if(isVeg){
-            price+=300;
-            bill+="Base Price Of The Pizza: 300\n";
+            basePrice=300;
+            toppingsPrice=70;
         }
         else{
-            price+=400;
-            bill+="Base Price Of The Pizza: 400\n";
+            basePrice=400;
+            toppingsPrice=120;
         }
+        totalPrice+=basePrice;
+        paperBagPrice=20;
+        bill+="Base Price Of The Pizza: "+basePrice+"\n";
     }
 
     public void addExtraCheese(){
-        if(!cheese){
-            price+=80;
+        if(!cheeseAdded){
+            totalPrice+=80;
             bill+="Extra Cheese Added: 80\n";
-            cheese=true;
+            cheeseAdded=true;
         }
     }
 
     public void addExtraToppings(){
-        if(!toppings){
-            if(isVeg){
-                price+=70;
-                bill+="Extra Toppings Added: 70\n";
-            }
-            else{
-                price+=120;
-                bill+="Extra Toppings Added: 120\n";
-            }
-            toppings=true;
+        if(!toppingsAdded){
+            totalPrice+=toppingsPrice;
+            bill+="Extra Toppings Added: "+toppingsPrice+"\n";
+            toppingsAdded=true;
         }
     }
 
     public void addTakeaway(){
-        if(!bag){
-            price+=20;
-            bill+="Paperbag Added: 20\n";
-            bag=true;
+        if(!bagAdded){
+            totalPrice+=paperBagPrice;
+            bill+="Paperbag Added: "+paperBagPrice+"\n";
+            bagAdded=true;
         }
     }
 
     public String getBill(){
-        bill+="Total Price: "+getPrice()+"\n";
+        bill+="Total Price: "+getTotalPrice()+"\n";
         return this.bill;
     }
 
-    public int getPrice() {
-        return price;
+    public int getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
-    public Boolean getVeg() {
-        return isVeg;
+    public int getBasePrice() {
+        return basePrice;
     }
 
-    public void setVeg(Boolean veg) {
-        isVeg = veg;
+    public void setBasePrice(int basePrice) {
+        this.basePrice = basePrice;
     }
 
-    public void setBill(String bill) {
-        this.bill = bill;
+    public int getToppingsPrice() {
+        return toppingsPrice;
     }
 
-    public boolean isBag() {
-        return bag;
+    public void setToppingsPrice(int toppingsPrice) {
+        this.toppingsPrice = toppingsPrice;
     }
 
-    public void setBag(boolean bag) {
-        this.bag = bag;
+    public int getPaperBagPrice() {
+        return paperBagPrice;
     }
 
-    public boolean isCheese() {
-        return cheese;
+    public void setPaperBagPrice(int paperBagPrice) {
+        this.paperBagPrice = paperBagPrice;
     }
 
-    public void setCheese(boolean cheese) {
-        this.cheese = cheese;
+    public boolean isBagAdded() {
+        return bagAdded;
     }
 
-    public boolean isToppings() {
-        return toppings;
+    public void setBagAdded(boolean bagAdded) {
+        this.bagAdded = bagAdded;
     }
 
-    public void setToppings(boolean toppings) {
-        this.toppings = toppings;
+    public boolean isCheeseAdded() {
+        return cheeseAdded;
+    }
+
+    public void setCheeseAdded(boolean cheeseAdded) {
+        this.cheeseAdded = cheeseAdded;
+    }
+
+    public boolean isToppingsAdded() {
+        return toppingsAdded;
+    }
+
+    public void setToppingsAdded(boolean toppingsAdded) {
+        this.toppingsAdded = toppingsAdded;
     }
 }
